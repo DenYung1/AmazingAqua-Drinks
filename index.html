@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
+    <title>AmazingAqua Drinks | Premium Beverages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add meta descriptions -->
+    <meta name="description" content="Premium beverages delivered to your doorstep. Order coffee, tea, smoothies and juices online.">
+    <!-- Add security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline';">
+    <meta name="keywords" content="beverages, coffee, tea, smoothies, juice, drinks delivery">
+    <meta name="author" content="AmazingAqua Drinks">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Sip & Savor | Premium Beverages">
+    <meta property="og:description" content="Premium beverages delivered to your doorstep. Order coffee, tea, smoothies and juices online.">
+    <meta property="og:image" content="images/Amazing drinks.jpg">
+    <meta property="og:url" content="your-website-url.com">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Loading...</p>
+        </div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-glass-cheers me-2"></i>
+                AmazingAqua Drinks
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <h1 class="display-4 fw-bold mb-3">Refresh Your Day</h1>
+                    <p class="lead mb-4">Premium beverages made with the finest ingredients, delivered to your doorstep.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Order Now</a>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+                    <div class="hero-image-container">
+                        <img src="images/Amazing drinks.jpg" alt="Featured beverages" class="img-fluid rounded-3 shadow" style="max-height: 400px; width: auto; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Menu</h2>
+            
+            <!-- Add Search Bar -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <div class="search-wrapper">
+                        <input type="text" class="form-control" id="searchMenu" placeholder="Search drinks...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Menu Categories -->
+            <ul class="nav nav-pills mb-4 justify-content-center" id="menuTabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all">All</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#coffee">Coffee</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tea">Tea</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#smoothies">Smoothies</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#juices">Juices</button>
+                </li>
+            </ul>
+            
+            <!-- Menu Items -->
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="all">
+                    <div class="row" id="menuItems">
+                        <!-- Menu items will be loaded here from JavaScript -->
+                        <div id="menuLoader" class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading menu items...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="coffee">
+                    <div class="row" id="coffeeItems">
+                        <!-- Coffee items will be filtered here -->
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tea">
+                    <div class="row" id="teaItems">
+                        <!-- Tea items will be filtered here -->
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="smoothies">
+                    <div class="row" id="smoothieItems">
+                        <!-- Smoothie items will be filtered here -->
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="juices">
+                    <div class="row" id="juiceItems">
+                        <!-- Juice items will be filtered here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="subtitle text-primary fw-bold">Our Story</span>
+                <h2 class="display-4 fw-bold mb-3">Refreshing Ghana's Beverage Culture</h2>
+                <div class="divider-custom">
+                    <div class="divider-line"></div>
+                    <i class="fas fa-glass-cheers text-primary"></i>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-6">
+                    <div class="about-image-wrapper">
+                        <div class="main-image-container">
+                            <img src="images/Amazing drinks.jpg" 
+                                 alt="About Amazing Aqua Drinks" 
+                                 class="img-fluid rounded-4 shadow-lg main-image">
+                        </div>
+                        <div class="accent-image-container">
+                            <img src="images/Amazing drinks.jpg" 
+                                 alt="Signature Drink" 
+                                 class="rounded-4 shadow-lg accent-image">
+                            <div class="pattern-dots"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content ps-lg-5">
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Local Heritage</h4>
+                                    <p>Founded in 2025, we celebrate Ghana's rich beverage culture by crafting authentic local drinks with a modern twist.</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Artisanal Quality</h4>
+                                    <p>We specialize in fresh, locally inspired drinks like sobolo, brukina, and lamougine, carefully crafted to preserve their essence.</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Community Impact</h4>
+                                    <p>Our mission extends beyond beverages – we support local producers and create meaningful connections through every drink.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Error mollitia id enim qui! Animi cupiditate pariatur cumque autem voluptatem nam eum porro dicta illo beatae. 
+                                Dolore quibusdam dicta totam aliquam?</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <div class="d-flex align-items-center">
+                                <img src="images/Amazing drinks.jpg" alt="Customer" class="rounded-circle me-3" width="50" height="50">
+                                <div>
+                                    <h6 class="mb-0">Jane Smith</h6>
+                                    <small class="text-muted">Regular Customer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Temporibus tempora voluptatum, nam labore quasi commodi, non perspiciatis doloremque illum sed qui sapiente 
+                                sint porro quisquam reiciendis dicta libero velit incidunt?</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <div class="d-flex align-items-center">
+                                <img src="images/Amazing drinks.jpg" alt="Customer" class="rounded-circle me-3" width="50" height="50">
+                                <div>
+                                    <h6 class="mb-0">Michael Johnson</h6>
+                                    <small class="text-muted">Regular Member</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Nulla dolore repellat omnis! Dolor mollitia tenetur inventore ipsa quae in cupiditate aperiam quasi quo harum! 
+                                Repudiandae officia ea eligendi nisi sapiente?</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <div class="d-flex align-items-center">
+                                <img src="images/Amazing drinks.jpg" alt="Customer" class="rounded-circle me-3" width="50" height="50">
+                                <div>
+                                    <h6 class="mb-0">Emily Chen</h6>
+                                    <small class="text-muted">Regular Member</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Get In Touch</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="name" 
+                                   name="name"
+                                   autocomplete="name" 
+                                   required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" 
+                                   class="form-control" 
+                                   id="email" 
+                                   name="email"
+                                   autocomplete="email" 
+                                   required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" 
+                                      id="message" 
+                                      name="message"
+                                      rows="5" 
+                                      autocomplete="off" 
+                                      required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Contact Information</h5>
+                            <p class="card-text mb-3"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Accra, Circle</p>
+                            <p class="card-text mb-3"><i class="fas fa-phone me-2 text-primary"></i> (233) 543584177</p>
+                            <p class="card-text mb-3"><i class="fas fa-envelope me-2 text-primary"></i> amazingaquadrinks@gmail.com</p>
+                            <h5 class="mt-4 mb-3">Operating Hours</h5>
+                            <p class="card-text mb-2">Monday - Friday: 8:00 AM - 4:00 PM</p>
+                            <p class="card-text mb-2">Saturday: 8:00 AM - 2:00 PM</p>
+                            <p class="card-text">Sunday: 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this before the footer -->
+    <button id="scrollToTop" class="btn btn-primary rounded-circle position-fixed d-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Info - Left Column -->
+                <div class="col-12 col-md-4">
+                    <h5 class="border-bottom pb-2 mb-3">AmazingAqua Drinks</h5>
+                    <p class="mb-3">Quality beverages delivered to your doorstep.</p>
+                </div>
+                
+                <!-- Quick Links - Middle Column -->
+                <div class="col-12 col-md-4 footer-quick-links">
+                    <h5 class="border-bottom pb-2 mb-3">Quick Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-white text-decoration-none hover-opacity">Home</a></li>
+                        <li><a href="#menu" class="text-white text-decoration-none hover-opacity">Menu</a></li>
+                        <li><a href="#about" class="text-white text-decoration-none hover-opacity">About Us</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none hover-opacity">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media - Right Column -->
+                <div class="col-12 col-md-4">
+                    <h5 class="border-bottom pb-2 mb-3 text-md-end">Connect With Us</h5>
+                    <div class="social-links d-flex gap-3 justify-content-start justify-content-md-end">
+                        <a href="#" class="text-white social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/amazingaquadrinks/" class="text-white social-icon"><i class="fab fa-instagram"></i></a>
+                
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright and Terms -->
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-6 text-start">
+                    <a href="#" class="text-white text-decoration-none hover-opacity">Privacy Policy</a>
+                </div>
+                <div class="col-6 text-end">
+                    <a href="#" class="text-white text-decoration-none hover-opacity">Terms of Service</a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 AmazingAqua Drinks. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+       
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
