@@ -92,7 +92,7 @@ section {
 /* Menu Section */
 #menu {
     background-color: var(--white);
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 #menuTabs .nav-link {
@@ -640,7 +640,7 @@ body.loading {
 
 /* Menu Section Responsive Styles */
 #menu {
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 /* Menu Cards */
@@ -1010,7 +1010,8 @@ h4, .h4 {
 
 /* Hero Section Spacing */
 .hero {
-    padding-top: 100px !important; /* Increased padding to account for fixed navbar */
+    padding-top: 76px;
+    padding-bottom: 2rem;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -1039,6 +1040,11 @@ h4, .h4 {
 }
 
 @media (max-width: 767.98px) {
+    .hero {
+        padding-top: 56px;
+        padding-bottom: 1rem;
+    }
+
     .hero-image-container {
         max-width: 100%;
         padding: 0;
@@ -1241,7 +1247,7 @@ h4, .h4 {
 /* Hero Section Mobile Styles */
 @media (max-width: 767.98px) {
     .hero {
-        padding-top: 76px;
+        padding-top: 56px;
         padding-bottom: 1rem;
     }
 
@@ -1320,7 +1326,7 @@ h4, .h4 {
 /* Remove all previous mobile-specific order styles and use these instead */
 @media (max-width: 767.98px) {
     .hero {
-        padding-top: 76px;
+        padding-top: 56px;
         padding-bottom: 1rem;
     }
 
@@ -1430,5 +1436,139 @@ h4, .h4 {
 
     .mobile-hero > div:last-child {
         order: 1;
+    }
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 1rem;
+    }
+
+    #menu {
+        padding: 2rem 0;
+    }
+
+    .hero-image-container {
+        max-width: 500px;
+        margin: 1rem auto;
+    }
+}
+
+/* Tablet-specific adjustments for iPad Pro */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero {
+        padding-top: 50px;  /* Reduced from 60px */
+        padding-bottom: 0;  /* Removed bottom padding */
+    }
+
+    #menu {
+        padding: 1rem 0;  /* Reduced from 2rem */
+    }
+
+    .hero-image-container {
+        max-width: 500px;
+        margin: 0.5rem auto;  /* Reduced from 1rem */
+    }
+
+    .hero-text {
+        margin-bottom: 1rem;
+    }
+
+    .hero .lead {
+        margin-bottom: 1rem;
+    }
+
+    /* Adjust vertical spacing between sections */
+    section {
+        padding: 1.5rem 0;  /* Reduced from default padding */
+    }
+}
+
+/* Hero Content Spacing */
+.hero-text {
+    margin-bottom: 2rem;  /* Increased spacing */
+}
+
+.hero .lead {
+    margin-bottom: 1.5rem;  /* Added space between lead text and button */
+}
+
+/* Desktop Button Spacing */
+.d-none.d-lg-block .btn-lg {
+    margin-top: 1.5rem;  /* Space above desktop button */
+}
+
+/* Mobile Button Spacing */
+.d-lg-none .btn-lg {
+    margin-top: 1.5rem;  /* Space above mobile button */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .hero-text {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero .lead {
+        margin-bottom: 1.25rem;
+    }
+    
+    .d-lg-none .btn-lg {
+        margin-top: 1.25rem;
+    }
+}
+
+/* Hero Heading Styles */
+.hero h1 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem); /* Reduced from 2.5rem, 5vw, 3.5rem */
+    font-weight: 700; /* Slightly reduced from 800 */
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em; /* Reduced from -0.02em */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+    font-family: var(--primary-font);
+}
+
+/* Responsive adjustments for hero heading */
+@media (max-width: 767.98px) {
+    .hero h1 {
+        font-size: clamp(1.5rem, 2.5vw, 1.75rem);
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Navbar Mobile Fix */
+.navbar {
+    background: rgba(255, 255, 255, 0.98) !important;
+}
+
+/* Hero Section Mobile Fix */
+.hero {
+    padding-top: 85px; /* Increased padding to prevent overlap */
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 767.98px) {
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero-text {
+        position: relative;
+        z-index: 2;
+        background: var(--light-bg);
+        padding: 1rem 0;
+    }
+
+    .navbar {
+        background: rgba(255, 255, 255, 1) !important; /* Solid background on mobile */
     }
 }
