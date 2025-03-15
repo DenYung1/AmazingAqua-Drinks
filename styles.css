@@ -41,50 +41,36 @@ section {
 
 /* Hero Section */
 .hero {
-    padding-top: 80px;
+    padding-top: 76px;
     padding-bottom: 2rem;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--light-bg) 0%, #E3F2FD 100%);
-}
-
-.hero h1 {
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    margin-bottom: 1rem;
-}
-
-.hero .lead {
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    color: #666;
-}
-
-.hero-image-container {
-    position: relative;
-    padding: 0.5rem;
-    max-width: 500px; /* Limit maximum width */
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    max-height: 350px; /* Reduced from 500px */
-    object-fit: cover;
-    border-radius: 0.75rem;
-}
-
-.hero-image-container img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
 }
 
 .hero-content {
-    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-image img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 992px) {
+    .hero-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        flex: 1;
+    }
+
+    .hero-image {
+        flex: 1;
+    }
 }
 
 /* Product Cards */
@@ -182,7 +168,7 @@ footer a:hover {
 /* Responsive Styles */
 @media (max-width: 767.98px) {
     .hero {
-        padding: 76px 0 2rem;
+        padding: 76px 0 1rem;
     }
     
     .hero h1 {
@@ -213,6 +199,7 @@ footer a:hover {
     .hero-image-container {
         max-width: 100%;
         padding: 0;
+        margin: 0.75rem auto;
     }
 
     .hero .lead {
@@ -222,6 +209,7 @@ footer a:hover {
     .hero .btn-lg {
         padding: 0.5rem 1.5rem;
         font-size: 1rem;
+        margin-top: 0.5rem;
     }
 
     .hero-image-container img {
@@ -229,12 +217,20 @@ footer a:hover {
         width: 100% !important;
         object-fit: cover !important;
     }
+
+    .hero-content {
+        padding: 0.5rem 0;
+    }
+
+    .hero-text {
+        margin-bottom: 0.5rem;
+    }
 }
 
 /* Hero Section Responsive Fixes */
 @media (max-width: 767.98px) {
     .hero {
-        padding: 76px 0 2rem;
+        padding: 76px 0 1rem;
         min-height: auto;
     }
 
@@ -1137,26 +1133,74 @@ h4, .h4 {
 
 /* Hero Section Styles */
 .hero {
-    padding-top: 90px;
-    padding-bottom: 2rem;
-    overflow: hidden;
+    padding-top: 76px;
+    padding-bottom: 1rem;
 }
 
 .hero-content {
-    padding: 2rem 0;
+    padding: 0.5rem 0;
 }
 
 .hero-image-container {
-    position: relative;
-    padding: 1rem;
+    max-width: 450px;
+    margin: 0.5rem auto;
 }
 
 .hero-image {
     width: 100%;
     height: auto;
-    max-height: 500px;
+    max-height: 350px;
     object-fit: cover;
-    border-radius: 1rem;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* Mobile Button Styles */
+.mobile-order-btn {
+    width: auto;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .hero {
+        padding-top: 76px;
+    }
+
+    .hero-content {
+        padding: 1rem 0;
+    }
+
+    .hero-image-container {
+        max-width: 400px;
+        margin: 2rem auto;
+    }
+
+    .hero-image {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-image-container {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .hero-image {
+        max-height: 250px;
+    }
+
+    .mobile-order-btn {
+        margin-top: 0.5rem;
+    }
 }
 
 /* Responsive Styles */
@@ -1197,11 +1241,106 @@ h4, .h4 {
 /* Hero Section Mobile Styles */
 @media (max-width: 767.98px) {
     .hero {
-        padding: 76px 0 2rem;
-        min-height: auto;
+        padding-top: 76px;
+        padding-bottom: 1rem;
     }
 
-    .hero-content {
+    .hero-text {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-image-container {
+        margin-bottom: 1rem;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Desktop Order Button */
+.desktop-order-btn {
+    margin-top: 1rem;
+}
+
+/* Hero Section Spacing Adjustments */
+.hero-content {
+    padding: 1rem 0;
+}
+
+.hero-text {
+    margin-bottom: 1rem;  /* Reduced from 1.5rem */
+}
+
+.hero .lead {
+    margin-bottom: 1rem;  /* Reduced from 2rem */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .hero-text {
+        margin-bottom: 0.75rem;  /* Further reduced for mobile */
+    }
+
+    .hero .lead {
+        margin-bottom: 0.75rem;
+    }
+
+    .btn-lg {
+        margin-top: 0.5rem;
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    padding-top: 76px;
+    padding-bottom: 1rem;
+}
+
+.hero-text {
+    margin-bottom: 1.5rem;
+}
+
+.hero-image-container {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+    .hero-text {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-image-container {
+        margin-bottom: 0;
+    }
+}
+
+/* Remove all previous mobile-specific order styles and use these instead */
+@media (max-width: 767.98px) {
+    .hero {
+        padding-top: 76px;
+        padding-bottom: 1rem;
+    }
+
+    .hero-text {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-image-container {
+        margin-bottom: 1rem;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Only mobile styles - will not affect desktop */
+@media (max-width: 767.98px) {
+    .hero .row {
         display: flex;
         flex-direction: column;
     }
@@ -1211,13 +1350,85 @@ h4, .h4 {
         margin-bottom: 1.5rem;
     }
 
-    .hero-button {
+    .hero-image-container {
+        order: 2;
+        margin-bottom: 1rem;
+    }
+
+    .mobile-order-btn-wrapper {
         order: 3;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Mobile order styles - ONLY affect mobile */
+@media (max-width: 767.98px) {
+    .mobile-order {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-order > div:nth-child(1) { /* Text */
+        order: 1;
+        margin-bottom: 1.5rem;
+    }
+
+    .mobile-order > div:nth-child(2) { /* Image */
+        order: 2;
+        margin-bottom: 1.5rem;
+    }
+
+    .mobile-order > div:nth-child(3) { /* Button */
+        order: 3;
+    }
+}
+
+/* Remove all previous mobile styles and use only these */
+@media (max-width: 767.98px) {
+    /* Mobile Order Classes */
+    .mobile-order-1 {
+        order: 1 !important;
+    }
+    
+    .mobile-order-2 {
+        order: 2 !important;
+    }
+    
+    .mobile-order-3 {
+        order: 3 !important;
+    }
+
+    /* Spacing Adjustments */
+    .hero-text {
+        margin-bottom: 1.5rem;
     }
 
     .hero-image-container {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Button Styling */
+    .btn-lg {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mobile-hero {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-hero > div:first-child {
+        order: 3;
+    }
+
+    .mobile-hero > div:nth-child(2) {
         order: 2;
-        margin-bottom: 0;
+    }
+
+    .mobile-hero > div:last-child {
+        order: 1;
     }
 }
