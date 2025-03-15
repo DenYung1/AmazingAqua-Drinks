@@ -36,16 +36,37 @@ section {
 
 /* Hero Section */
 .hero {
+    padding-top: 90px;
+    padding-bottom: 2rem;
+    overflow: hidden;
     background: linear-gradient(135deg, var(--light-bg) 0%, #E3F2FD 100%);
-    padding: 80px 0;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero .lead {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: #666;
 }
 
 .hero-image-container {
+    position: relative;
+    padding: 1rem;
     max-width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 .hero-image-container img {
@@ -150,11 +171,11 @@ footer a:hover {
 /* Responsive Styles */
 @media (max-width: 767.98px) {
     .hero {
-        padding: 40px 0;
+        padding: 76px 0 2rem;
     }
     
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     
     #menuTabs {
@@ -176,6 +197,20 @@ footer a:hover {
     }
     #menuTabs .nav-item:last-child {
         margin-right: 0;
+    }
+
+    .hero-image-container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero .lead {
+        font-size: 1rem;
+    }
+
+    .hero .btn-lg {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
     }
 
     .hero-image-container img {
@@ -937,8 +972,14 @@ h4, .h4 {
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
     .hero {
-        padding-top: 80px !important;
+        padding-top: 76px;
+        text-align: center;
         min-height: auto;
+    }
+
+    .hero-image-container {
+        max-width: 80%;
+        margin: 0 auto;
     }
 }
 
